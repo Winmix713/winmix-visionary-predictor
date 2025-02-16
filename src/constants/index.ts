@@ -1,52 +1,28 @@
 
+import { type UserSettings } from "@/types";
+
 export const TIMER_DURATION = 300; // 5 minutes in seconds
 
 export const MATCH_SLOTS = 4;
 
 export const TEAMS = [
-  {
-    id: "mc",
-    name: "Manchester City",
-    logoUrl: "/lovable-uploads/c043736f-9c1e-4f10-9d16-08c8cc7a5989.png",
-    weight: 0.85,
-    league: "premier-league"
-  },
-  {
-    id: "ars",
-    name: "Arsenal",
-    logoUrl: "/lovable-uploads/3f92df3a-8bb3-4988-ba7d-ebceb7fbbb0a.png",
-    weight: 0.82,
-    league: "premier-league"
-  },
-  {
-    id: "liv",
-    name: "Liverpool",
-    logoUrl: "/lovable-uploads/c043736f-9c1e-4f10-9d16-08c8cc7a5989.png",
-    weight: 0.83,
-    league: "premier-league"
-  },
-  {
-    id: "tot",
-    name: "Tottenham",
-    logoUrl: "/lovable-uploads/3f92df3a-8bb3-4988-ba7d-ebceb7fbbb0a.png",
-    weight: 0.78,
-    league: "premier-league"
-  },
-  {
-    id: "rm",
-    name: "Real Madrid",
-    logoUrl: "/lovable-uploads/c043736f-9c1e-4f10-9d16-08c8cc7a5989.png",
-    weight: 0.86,
-    league: "la-liga"
-  },
-  {
-    id: "fcb",
-    name: "Barcelona",
-    logoUrl: "/lovable-uploads/3f92df3a-8bb3-4988-ba7d-ebceb7fbbb0a.png",
-    weight: 0.84,
-    league: "la-liga"
-  }
-] as const;
+  { id: "arsenal", name: "London Ágyúk", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t3.png", weight: 1.0, league: "premier-league" },
+  { id: "astonvilla", name: "Aston Oroszlán", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t7.png", league: "premier-league" },
+  { id: "brentford", name: "Brentford", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t94.png", league: "premier-league" },
+  { id: "brighton", name: "Brighton", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t36.png", league: "premier-league" },
+  { id: "chelsea", name: "Chelsea", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t8.png", weight: 0.9, league: "premier-league" },
+  { id: "palace", name: "Crystal Palace", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t31.png", league: "premier-league" },
+  { id: "everton", name: "Everton", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t11.png", league: "premier-league" },
+  { id: "fulham", name: "Fulham", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t54.png", league: "premier-league" },
+  { id: "liverpool", name: "Liverpool", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t14.png", weight: 0.9, league: "premier-league" },
+  { id: "mancity", name: "Manchester Kék", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t43.png", weight: 0.8, league: "premier-league" },
+  { id: "newcastle", name: "Newcastle", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t4.png", league: "premier-league" },
+  { id: "nottingham", name: "Nottingham", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t17.png", league: "premier-league" },
+  { id: "tottenham", name: "Tottenham", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t6.png", weight: 1.1, league: "premier-league" },
+  { id: "manutd", name: "Vörös Ördögök", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t1.png", weight: 0.9, league: "premier-league" },
+  { id: "westham", name: "West Ham", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t21.png", league: "premier-league" },
+  { id: "wolves", name: "Wolverhampton", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t39.png", league: "premier-league" }
+].sort((a, b) => a.name.localeCompare(b.name)) as const;
 
 export const LEAGUES = [
   {
