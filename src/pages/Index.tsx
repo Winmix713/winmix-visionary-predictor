@@ -1,60 +1,37 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
-import MatchCard from "@/components/MatchCard";
+import MatchSelection from "@/components/MatchSelection";
+import PredictionResults from "@/components/PredictionResults";
 
 const Index = () => {
-  const sampleMatches = [
-    {
-      homeTeam: "Arsenal",
-      awayTeam: "Chelsea",
-      league: "Premier League",
-      date: "2024-03-20 20:00",
-      prediction: {
-        homeScore: 2,
-        awayScore: 1,
-        confidence: 75,
-      },
-    },
-    {
-      homeTeam: "Barcelona",
-      awayTeam: "Real Madrid",
-      league: "La Liga",
-      date: "2024-03-21 21:00",
-      prediction: {
-        homeScore: 2,
-        awayScore: 2,
-        confidence: 65,
-      },
-    },
-  ];
+  const [showPredictions, setShowPredictions] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#0A0A0A]">
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-8">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-2">Match Predictions</h1>
-          <p className="text-muted-foreground">Select matches to get AI-powered predictions</p>
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2 text-[#CCFF00]">Mérkőzések kiválasztása</h1>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-8">
-          {sampleMatches.map((match, index) => (
-            <MatchCard key={index} {...match} />
-          ))}
-        </div>
+        <MatchSelection />
+
+        {showPredictions && <PredictionResults />}
 
         <Button
-          className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+          onClick={() => setShowPredictions(true)}
+          className="w-full mt-8 py-3 bg-[#CCFF00] text-black font-bold rounded-md hover:bg-[#CCFF00]/90 transition-colors"
           size="lg"
         >
-          Run Predictions
+          Predikciók futtatása
         </Button>
       </main>
 
-      <footer className="glass border-t border-accent/20 py-6">
+      <footer className="glass border-t border-[#CCFF00]/20 py-6">
         <div className="container mx-auto px-4">
           <Navigation />
         </div>
