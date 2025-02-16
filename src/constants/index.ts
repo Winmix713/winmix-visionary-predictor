@@ -1,11 +1,11 @@
 
-import { type UserSettings } from "@/types";
+import { type UserSettings, type Team } from "@/types";
 
 export const TIMER_DURATION = 300; // 5 minutes in seconds
 
 export const MATCH_SLOTS = 4;
 
-export const TEAMS = [
+export const TEAMS: Team[] = [
   { id: "arsenal", name: "London Ágyúk", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t3.png", weight: 1.0, league: "premier-league" },
   { id: "astonvilla", name: "Aston Oroszlán", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t7.png", league: "premier-league" },
   { id: "brentford", name: "Brentford", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t94.png", league: "premier-league" },
@@ -22,7 +22,7 @@ export const TEAMS = [
   { id: "manutd", name: "Vörös Ördögök", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t1.png", weight: 0.9, league: "premier-league" },
   { id: "westham", name: "West Ham", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t21.png", league: "premier-league" },
   { id: "wolves", name: "Wolverhampton", logoUrl: "https://resources.premierleague.com/premierleague/badges/50/t39.png", league: "premier-league" }
-].sort((a, b) => a.name.localeCompare(b.name)) as const;
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export const LEAGUES = [
   {
